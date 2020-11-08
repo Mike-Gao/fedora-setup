@@ -46,6 +46,7 @@
       - code
       - google-chrome-stable
       - python3-psutil # ansible dconf module
+      - python-pip
       - evolution
       - evolution-ews
       - seahorse
@@ -88,6 +89,7 @@
       - rawtherapee
       - darktable
       - radare2
+      - cutter-re
       - yubikey-manager
       - wings
       - lxd
