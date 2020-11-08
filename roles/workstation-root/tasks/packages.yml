@@ -17,6 +17,13 @@
     state: present
     disable_gpg_check: yes
 
+- name: Add the Sublime Text repository
+  dnf:
+    name:
+      - 'https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo'
+    state: present
+    disable_gpg_check: yes
+
 - name: Install packages
   package:
     name: '{{ packages }}'
@@ -62,3 +69,4 @@
       - celluloid
       - foliate
       - sublime-text
+      - freecad

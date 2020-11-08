@@ -3,3 +3,18 @@
     name: flathub
     state: present
     flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+
+- name: Install Signal from flathub
+  community.general.flatpak:
+    name: org.signal.Signal
+    state: present
+
+- name: Install SimpleNote from flathub
+  community.general.flatpak:
+    name: com.simplenote.Simplenote
+    state: present
+    
+- name: Install Zoom from flathub
+  community.general.flatpak:
+    name: us.zoom.Zoom
+    state: present
