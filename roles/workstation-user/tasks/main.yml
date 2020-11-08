@@ -1,3 +1,4 @@
 - import_tasks: dconf.yml
 - import_tasks: local-packages.yml
 - import_tasks: home.yml
+- import_tasks: pip.yml

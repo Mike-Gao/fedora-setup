@@ -1,0 +1,7 @@
+- name: Copy softwares (filezilla, deltawalker) to /opt
+  copy:
+    src: ../../softwares/
+    dest: /opt/
+    owner: root
+    group: root
+    mode: u=rwx,g=rwx,o=x

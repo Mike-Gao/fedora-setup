@@ -30,6 +30,10 @@
     state: present
   vars:
     packages:
+      - akmod-nvidia
+      - xorg-x11-drv-nvidia-cuda
+      - xorg-x11-drv-nvidia-cuda-libs
+      - vulkan
       - aria2
       - git
       - git-lfs

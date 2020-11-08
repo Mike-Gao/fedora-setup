@@ -2,7 +2,6 @@
   pip:
     name: matplotlib
     extra_args: --user
-
 - name: Install scipy
   pip:
     name: scipy
@@ -16,4 +15,11 @@
 - name: Install panda3d
   pip:
     name: panda3d
+    extra_args: --user
+
+- name: Install torch
+  pip:
+    name: 
+      - torch
+      - torchvision
     extra_args: --user
