@@ -30,6 +30,7 @@
     state: present
   vars:
     packages:
+      - aria2
       - git
       - git-lfs
       - neovim
@@ -61,7 +62,6 @@
       - clang
       - make
       - ffmpeg
-      - vlc
       - dino
       - resilio-sync
       - emacs
@@ -70,3 +70,5 @@
       - foliate
       - sublime-text
       - freecad
+      - remmina
+      - deadbeef
