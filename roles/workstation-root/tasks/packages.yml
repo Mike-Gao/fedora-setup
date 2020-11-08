@@ -59,8 +59,11 @@
       - inkscape
       - gcc
       - gcc-c++
+      - llvm
       - clang
+      - lldb
       - make
+      - cmake
       - ffmpeg
       - dino
       - resilio-sync
@@ -72,3 +75,13 @@
       - freecad
       - remmina
       - deadbeef
+      - krita
+      - supercollider
+      - renderdoc
+      - luxrender
+      - meshlab
+      - godot
+      - rawtherapee
+      - darktable
+      - radare2
+      - yubikey-manager

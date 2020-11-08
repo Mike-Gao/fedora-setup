@@ -28,3 +28,8 @@
   community.general.flatpak:
     name: com.wire.WireDesktop
     state: present
+
+- name: Install GNU Octave from flathub
+  community.general.flatpak:
+    name: org.octave.Octave
+    state: present
