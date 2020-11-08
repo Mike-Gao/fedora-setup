@@ -85,3 +85,9 @@
       - darktable
       - radare2
       - yubikey-manager
+      - wings
+      - lxd
+      - ardour6
+      - glfw
+      - p7zip
+      - lvm2

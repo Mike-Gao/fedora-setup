@@ -1,0 +1,19 @@
+- name: Install matplotlib
+  pip:
+    name: matplotlib
+    extra_args: --user
+
+- name: Install scipy
+  pip:
+    name: scipy
+    extra_args: --user
+
+- name: Install pandas
+  pip:
+    name: pandas
+    extra_args: --user
+
+- name: Install panda3d
+  pip:
+    name: panda3d
+    extra_args: --user
