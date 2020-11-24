@@ -24,6 +24,13 @@
     state: present
     disable_gpg_check: yes
 
+- name: Add the Azul Java Repository
+  dnf:
+    name:
+      - 'https://cdn.azul.com/zulu/bin/zulu-repo-1.0.0-1.noarch.rpm'
+    state: present
+    disable_gpg_check: yes
+
 - name: Install packages
   package:
     name: '{{ packages }}'
@@ -97,3 +104,4 @@
       - glfw
       - p7zip
       - lvm2
+      - zulu8-jdk
