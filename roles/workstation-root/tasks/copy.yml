@@ -1,6 +1,6 @@
 - name: Copy softwares (filezilla, deltawalker) to /opt
   copy:
-    src: ../../../softwares/
+    src: ../../../private/opt/
     dest: /opt/
     owner: root
     group: root

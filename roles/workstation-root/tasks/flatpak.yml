@@ -33,3 +33,8 @@
   community.general.flatpak:
     name: org.octave.Octave
     state: present
+
+- name: Install Gnome Authenticator
+  community.general.flatpak:
+    name: com.github.bilelmoussaoui.Authenticator
+    state: present

@@ -24,3 +24,20 @@
     gpgcheck: yes
     gpgkey: https://dl.yarnpkg.com/rpm/pubkey.gpg
     skip_if_unavailable: yes
+
+- name: Add the Resilio Sync repository
+  yum_repository:
+    name: resilio
+    description: Resilio Sync
+    baseurl: https://linux-packages.resilio.com/resilio-sync/rpm/x86_64/
+    gpgcheck: yes
+    gpgkey: https://linux-packages.resilio.com/resilio-sync/key.asc
+    skip_if_unavailable: yes
+
+- name: Add the Sublime Text repository
+  yum_repository:
+    name: sublime
+    description: Sublime Text
+    baseurl: https://download.sublimetext.com/rpm/stable/x86_64/
+    gpgcheck: yes
+    gpgkey: https://download.sublimetext.com/sublimehq-rpm-pub.gpg

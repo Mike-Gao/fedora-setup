@@ -1,4 +1,1 @@
-softwares/filezilla/*
-softwares/deltawalker/*
-!softwares/filezilla/.gitkeep
-!softwares/deltawalker/.gitkeep
+private/
