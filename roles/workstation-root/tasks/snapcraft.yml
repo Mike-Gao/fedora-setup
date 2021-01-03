@@ -1,28 +1,28 @@
 - name: Install Standard Notes from snap
-  community.general.snap:
+  snap:
     name: standard-notes
     state: present
 
 - name: Install IntelliJ Idea Ultimate from snap
-  community.general.snap:
+  snap:
     name: intellij-idea-ultimate
     state: present
     classic: yes
 
 - name: Install CLion from snap
-  community.general.snap:
+  snap:
     name: clion
     state: present
     classic: yes
 
 - name: Install GoLand from snap
-  community.general.snap:
+  snap:
     name: goland
     state: present
     classic: yes
 
 - name: Install PyCharm Pro from snap
-  community.general.snap:
+  snap:
     name: pycharm-professional
     state: present
     classic: yes

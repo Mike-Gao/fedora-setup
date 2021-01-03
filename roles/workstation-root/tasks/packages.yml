@@ -1,12 +1,19 @@
-- name: Upgrade all packages
-  dnf:
-    name: '*'
-    state: latest
+#- name: Upgrade all packages
+#  dnf:
+#    name: '*'
+#    state: latest
 
 - name: Enable the RPM Fusion repository
   dnf:
     name:
       - 'https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm'
+    state: present
+    disable_gpg_check: yes
+    
+- name: Enable the RPM Fusion Non-free repository
+  dnf:
+    name:
+      - 'https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm'
     state: present
     disable_gpg_check: yes
 
@@ -26,6 +33,7 @@
       - akmod-nvidia
       - xorg-x11-drv-nvidia-cuda
       - xorg-x11-drv-nvidia-cuda-libs
+      - snapd
       - vulkan
       - aria2
       - git
@@ -76,7 +84,7 @@
       - krita
       - supercollider
       - renderdoc
-      - luxrender
+      - LuxRender
       - meshlab
       - godot
       - rawtherapee
@@ -85,9 +93,14 @@
       - cutter-re
       - yubikey-manager
       - wings
-      - lxd
-      - ardour6
+      #- ardour6
       - glfw
       - p7zip
       - lvm2
       - zulu8-jdk
+      
+- name: Create a symbolic link
+  file:
+    src: /var/lib/snapd/snap
+    dest: /snap
+    state: link
