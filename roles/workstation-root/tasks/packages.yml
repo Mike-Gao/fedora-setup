@@ -9,6 +9,13 @@
       - 'https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm'
     state: present
     disable_gpg_check: yes
+    
+- name: Enable the RPM Fusion Non-free repository
+  dnf:
+    name:
+      - 'https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm'
+    state: present
+    disable_gpg_check: yes
 
 - name: Add the Azul Java Repository
   dnf:
@@ -23,9 +30,12 @@
     state: present
   vars:
     packages:
+      # nvidia modules starts here
       - akmod-nvidia
       - xorg-x11-drv-nvidia-cuda
       - xorg-x11-drv-nvidia-cuda-libs
+      # nvidia modules ends here
+      - snapd
       - vulkan
       - aria2
       - git
@@ -74,9 +84,8 @@
       - remmina
       - deadbeef
       - krita
-      - supercollider
       - renderdoc
-      - luxrender
+      - LuxRender
       - meshlab
       - godot
       - rawtherapee
@@ -85,9 +94,23 @@
       - cutter-re
       - yubikey-manager
       - wings
-      - lxd
-      - ardour6
       - glfw
       - p7zip
       - lvm2
       - zulu8-jdk
+      # the following depends on jackctl
+      #- ardour6
+      #- supercollider
+      
+- name: Create a symbolic link
+  file:
+    src: /var/lib/snapd/snap
+    dest: /snap
+    state: link
+    
+- name: install starship
+  shell: curl -fsSL https://starship.rs/install.sh | bash -s -- -y
+  args:
+    creates: '/usr/local/bin/starship'
+
+
