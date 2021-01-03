@@ -1,7 +1,7 @@
-- name: Upgrade all packages
-  dnf:
-    name: '*'
-    state: latest
+#- name: Upgrade all packages
+#  dnf:
+#    name: '*'
+#    state: latest
 
 - name: Enable the RPM Fusion repository
   dnf:
@@ -34,7 +34,10 @@
       - akmod-nvidia
       - xorg-x11-drv-nvidia-cuda
       - xorg-x11-drv-nvidia-cuda-libs
+<<<<<<< HEAD
       # nvidia modules ends here
+=======
+>>>>>>> 9c1c25819feee297f6fae29d5cf5fe77e80fe026
       - snapd
       - vulkan
       - aria2
@@ -94,19 +97,27 @@
       - cutter-re
       - yubikey-manager
       - wings
+<<<<<<< HEAD
+=======
+      #- ardour6
+>>>>>>> 9c1c25819feee297f6fae29d5cf5fe77e80fe026
       - glfw
       - p7zip
       - lvm2
       - zulu8-jdk
+<<<<<<< HEAD
       # the following depends on jackctl
       #- ardour6
       #- supercollider
+=======
+>>>>>>> 9c1c25819feee297f6fae29d5cf5fe77e80fe026
       
 - name: Create a symbolic link
   file:
     src: /var/lib/snapd/snap
     dest: /snap
     state: link
+<<<<<<< HEAD
     
 - name: install starship
   shell: curl -fsSL https://starship.rs/install.sh | bash -s -- -y
@@ -114,3 +125,5 @@
     creates: '/usr/local/bin/starship'
 
 
+=======
+>>>>>>> 9c1c25819feee297f6fae29d5cf5fe77e80fe026
