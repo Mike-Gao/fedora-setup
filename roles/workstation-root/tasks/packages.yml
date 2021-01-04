@@ -98,6 +98,8 @@
       - p7zip
       - lvm2
       - zulu8-jdk
+      - valgrind
+      - perf
       # the following depends on jackctl
       #- ardour6
       #- supercollider
