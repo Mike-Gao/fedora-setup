@@ -7,6 +7,11 @@
   dconf:
     key: /org/gnome/desktop/wm/keybindings/close
     value: "['<Super>q', '<Alt>F4']"
+    
+- name: Using windows style minimize, maximize, close
+  dconf:
+    key: /org/gnome/desktop/wm/preferences/button-layout
+    value: "':minimize,maximize,close'"
 
 - name: Allow toggling fullscreen with Super-F
   dconf:
