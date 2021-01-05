@@ -43,3 +43,8 @@
   flatpak:
     name: com.gitlab.newsflash
     state: present
+    
+- name: Install DBeaver
+  flatpak:
+    name: io.dbeaver.DBeaverCommunity
+    state: present

@@ -42,6 +42,7 @@
       - git-lfs
       - neovim
       - htop
+      - zulu8-jdk
       - java-11-openjdk-devel
       - golang
       - nodejs
@@ -97,7 +98,6 @@
       - glfw
       - p7zip
       - lvm2
-      - zulu8-jdk
       - valgrind
       - perf
       - transmission
