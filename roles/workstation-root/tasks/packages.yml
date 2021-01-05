@@ -100,6 +100,7 @@
       - zulu8-jdk
       - valgrind
       - perf
+      - transmission
       # the following depends on jackctl
       #- ardour6
       #- supercollider
