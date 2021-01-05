@@ -97,6 +97,7 @@
       - wings
       - glfw
       - p7zip
+      - p7zip-plugins
       - lvm2
       - valgrind
       - perf
