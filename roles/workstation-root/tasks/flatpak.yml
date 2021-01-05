@@ -38,3 +38,8 @@
   flatpak:
     name: com.github.bilelmoussaoui.Authenticator
     state: present
+
+- name: Install NewsFlash
+  flatpak:
+    name: com.gitlab.newsflash
+    state: present
