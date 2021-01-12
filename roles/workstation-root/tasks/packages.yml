@@ -102,6 +102,7 @@
       - valgrind
       - perf
       - transmission
+      - gnome-todo
       # the following depends on jackctl
       #- ardour6
       #- supercollider
