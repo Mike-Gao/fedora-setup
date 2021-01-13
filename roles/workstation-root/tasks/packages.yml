@@ -103,6 +103,7 @@
       - perf
       - transmission
       - gnome-todo
+      - fish
       # the following depends on jackctl
       #- ardour6
       #- supercollider
