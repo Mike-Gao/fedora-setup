@@ -104,6 +104,14 @@
       - transmission
       - gnome-todo
       - fish
+      # gstreamer
+      - gstreamer1-plugins-base
+      - gstreamer1-plugins-good
+      - gstreamer1-plugins-good-extras
+      - gstreamer1-plugins-ugly
+      - gstreamer1-plugins-ugly-free
+      - gstreamer1-plugins-bad-free
+      - gstreamer1-plugins-bad-free-extras
       # the following depends on jackctl
       #- ardour6
       #- supercollider
