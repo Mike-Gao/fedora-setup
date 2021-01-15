@@ -41,3 +41,11 @@
     baseurl: https://download.sublimetext.com/rpm/stable/x86_64/
     gpgcheck: yes
     gpgkey: https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+
+- name: Add dotnet repository (Fedora 33)
+  yum_repository:
+    name: dotnet
+    description: dotnet
+    baseurl: https://packages.microsoft.com/fedora/33/prod/
+    gpgcheck: yes
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc

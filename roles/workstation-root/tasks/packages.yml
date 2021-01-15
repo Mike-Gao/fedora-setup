@@ -93,7 +93,6 @@
       - darktable
       - radare2
       - cutter-re
-      - yubikey-manager
       - wings
       - glfw
       - p7zip
@@ -117,9 +116,13 @@
       - cargo
       - rls
       - rustfmt
+      # dotnet
+      - dotnet-sdk-5.0
       # the following depends on jackctl
       #- ardour6
       #- supercollider
+      # yubikey related
+      #- yubikey-manager
       
 - name: Create a symbolic link
   file:
