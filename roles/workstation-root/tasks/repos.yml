@@ -42,10 +42,17 @@
     gpgcheck: yes
     gpgkey: https://download.sublimetext.com/sublimehq-rpm-pub.gpg
 
+- name: Add the negativo17's multimedia repository
+    name: negativo17
+    description: negativo17
+    baseurl: https://negativo17.org/repos/multimedia/fedora-{{ ansible_distribution_major_version }}/x86_64/
+    gpgcheck: yes
+    gpgkey: https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
+
 - name: Add dotnet repository (Fedora 33)
   yum_repository:
     name: dotnet
     description: dotnet
-    baseurl: https://packages.microsoft.com/fedora/33/prod/
+    baseurl: https://packages.microsoft.com/fedora/{{ ansible_distribution_major_version }}/prod/
     gpgcheck: yes
     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
