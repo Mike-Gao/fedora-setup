@@ -43,6 +43,7 @@
     gpgkey: https://download.sublimetext.com/sublimehq-rpm-pub.gpg
 
 - name: Add the negativo17's multimedia repository
+  yum_repository:
     name: negativo17
     description: negativo17
     baseurl: https://negativo17.org/repos/multimedia/fedora-{{ ansible_distribution_major_version }}/x86_64/

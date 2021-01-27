@@ -30,12 +30,11 @@
     state: present
   vars:
     packages:
-      # nvidia modules starts here
-      # rpmfusion
+      # rpmfusion nvidia modules
       # - akmod-nvidia
       # - xorg-x11-drv-nvidia-cuda
       # - xorg-x11-drv-nvidia-cuda-libs
-      # rpmfusion
+      # rpmfusion nvidia modules
       # negativo17
       - cuda
       - nvidia-driver-cuda
@@ -48,10 +47,9 @@
       - gstreamer1-svt-vp9
       - rar
       # negativo17
-      # nvidia modules ends here
-      # packages that are installed from negativo repository, skip here
+      # packages skipped - already installed from negativo17 repo
       # - blender
-      # end
+      # packages skipped
       - ffmpeg
       # gstreamer
       - gstreamer1-plugins-base
