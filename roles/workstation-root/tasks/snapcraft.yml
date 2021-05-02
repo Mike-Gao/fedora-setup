@@ -26,3 +26,9 @@
     name: pycharm-professional
     state: present
     classic: yes
+
+- name: Install Wickr Pro from snap
+  snap:
+    name: wickrpro
+    state: present
+    classic: yes

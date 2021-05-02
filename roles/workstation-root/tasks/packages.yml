@@ -35,10 +35,10 @@
       - akmod-nvidia
       # - nvidia-driver-libs.i686 # to add 32bit lib on a 64 bit system
       - nvidia-driver-cuda
-      - nvidia-settings
       - cuda  
       - cuda-devel
       - cuda-cudnn
+      - cuda-cli-tools
       - blender-cuda
       - gstreamer1-plugins-bad-fluidsynth
       - gstreamer1-plugins-bad
@@ -73,15 +73,17 @@
   vars:
     packages:
       # gstreamer from @updates
-      # - gstreamer1-plugins-base
-      # - gstreamer1-plugins-good
-      # - gstreamer1-plugins-good-extras
+      - gstreamer1-plugins-base
+      - gstreamer1-plugins-good
+      - gstreamer1-plugins-good-extras
+      - gstreamer1-libav
       # - gstreamer1-plugins-ugly-free
       # - gstreamer1-plugins-bad-free
       # - gstreamer1-plugins-bad-free-extras
       # - gstreamer1-plugins-bad-free-fluidsynth
       # gstreamer
       # - celluloid
+      - util-linux-user
       - snapd
       - aria2
       - git
