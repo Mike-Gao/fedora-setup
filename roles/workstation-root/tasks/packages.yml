@@ -24,46 +24,67 @@
     state: present
     disable_gpg_check: yes
 
+- name: Install nvidia support and other packages from @negativo17 - (Cannot be used with @rpmfusion)
+  package:
+    name: '{{ negativo17 }}'
+    state: present
+  vars:
+  negativo17:
+      - nvidia-driver
+      - nvidia-settings
+      - akmod-nvidia
+      # - nvidia-driver-libs.i686 # to add 32bit lib on a 64 bit system
+      - nvidia-driver-cuda
+      - nvidia-settings
+      - cuda  
+      - cuda-devel
+      - cuda-cudnn
+      - blender-cuda
+      - gstreamer1-plugins-bad-fluidsynth
+      - gstreamer1-plugins-bad
+      - gstreamer1-vaapi
+      - gstreamer1-plugins-ugly
+      - rar
+      - ffmpeg
+      - steam
+      
+# - name: Install nvidia support and other packages from rpmfusion
+#  package:
+#    name: '{{ rpmfusion }}'
+#    state: present
+#  vars:
+#  rpmfusion:
+#      - akmod-nvidia
+#      - xorg-x11-drv-nvidia-cuda
+#      - xorg-x11-drv-nvidia-cuda-libs
+#      - blender
+#      - ffmpeg
+#      - gstreamer1-vaapi
+#      - gstreamer1-plugins-ugly
+#      - gstreamer1-plugins-bad-freeworld
+#      - vulkan
+#      - glfw
+      
 - name: Install packages
   package:
     name: '{{ packages }}'
     state: present
   vars:
     packages:
-      # rpmfusion nvidia modules
-      # - akmod-nvidia
-      # - xorg-x11-drv-nvidia-cuda
-      # - xorg-x11-drv-nvidia-cuda-libs
-      # rpmfusion nvidia modules
-      # negativo17
-      - cuda
-      - nvidia-driver-cuda
-      - cuda-devel
-      - blender-cuda
-      - gstreamer1-plugins-bad-fluidsynth
-      - gstreamer1-plugins-bad
-      - gstreamer1-svt-av1
-      - gstreamer1-svt-hevc
-      - gstreamer1-svt-vp9
-      - rar
-      # negativo17
-      # packages skipped - already installed from negativo17 repo
-      # - blender
-      # packages skipped
-      - ffmpeg
+      # gstreamer from @updates
+      # - gstreamer1-plugins-base
+      # - gstreamer1-plugins-good
+      # - gstreamer1-plugins-good-extras
+      # - gstreamer1-plugins-ugly-free
+      # - gstreamer1-plugins-bad-free
+      # - gstreamer1-plugins-bad-free-extras
+      # - gstreamer1-plugins-bad-free-fluidsynth
       # gstreamer
-      - gstreamer1-plugins-base
-      - gstreamer1-plugins-good
-      - gstreamer1-plugins-good-extras
-      - gstreamer1-plugins-ugly
-      - gstreamer1-plugins-ugly-free
-      - gstreamer1-plugins-bad-free
-      - gstreamer1-plugins-bad-free-extras
-      # gstreamer
+      # - celluloid
       - snapd
-      - vulkan
       - aria2
       - git
+      - git-filter-repo
       - git-lfs
       - neovim
       - htop
@@ -74,6 +95,7 @@
       - yarn
       - code
       - google-chrome-stable
+      - python3.8 # required for taichi
       - python3-psutil # ansible dconf module
       - python-pip
       - evolution
@@ -89,6 +111,11 @@
       - texlive-fontawesome
       - texlive-tcolorbox
       - texlive-clrscode3e
+      - texlive-tikz-qtree
+      - texlive-upquote
+      - texlive-ifoddpage
+      - texlive-acmart
+      - texlive-makecell
       - gimp
       - inkscape
       - gcc
@@ -100,24 +127,16 @@
       - cmake
       - dino
       - resilio-sync
-      - emacs
-      - celluloid
       - foliate
-      - sublime-text
       - freecad
       - remmina
-      - deadbeef
-      - krita
       - renderdoc
       - LuxRender
       - meshlab
       - godot
       - rawtherapee
-      - darktable
       - radare2
       - cutter-re
-      - wings
-      - glfw
       - p7zip
       - p7zip-plugins
       - lvm2
@@ -126,19 +145,26 @@
       - transmission
       - gnome-todo
       - fish
-      # rust
+      # rust related
       - rust
       - cargo
       - rls
       - rustfmt
-      # dotnet
-      #- dotnet-sdk-5.0
-      #- mono-complete
+      # dotnet related
+      - dotnet-sdk-5.0
+      # packages no longer in use
+      # - sublime-text
+      # - emacs
       # the following depends on jackctl
-      #- ardour6
-      #- supercollider
+      # - ardour6
+      # - supercollider
       # yubikey related
-      #- yubikey-manager
+      # - yubikey-manager
+      # additional multimedia apps
+      # - wings
+      # - darktable
+      # - krita
+      # - deadbeef
       
 - name: Create a symbolic link
   file:

@@ -1,3 +1,4 @@
+# This script is here just as an example, it is currently not included in the post install process
 - name: Install matplotlib
   pip:
     name: matplotlib

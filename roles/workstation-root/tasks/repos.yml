@@ -34,13 +34,13 @@
     gpgkey: https://linux-packages.resilio.com/resilio-sync/key.asc
     skip_if_unavailable: yes
 
-- name: Add the Sublime Text repository
-  yum_repository:
-    name: sublime
-    description: Sublime Text
-    baseurl: https://download.sublimetext.com/rpm/stable/x86_64/
-    gpgcheck: yes
-    gpgkey: https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+# - name: Add the Sublime Text repository
+#   yum_repository:
+#     name: sublime
+#     description: Sublime Text
+#     baseurl: https://download.sublimetext.com/rpm/stable/x86_64/
+#     gpgcheck: yes
+#     gpgkey: https://download.sublimetext.com/sublimehq-rpm-pub.gpg
 
 - name: Add the negativo17's multimedia repository
   yum_repository:
@@ -50,7 +50,7 @@
     gpgcheck: yes
     gpgkey: https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
 
-- name: Add dotnet repository (Fedora 33)
+- name: Add dotnet repository
   yum_repository:
     name: dotnet
     description: dotnet

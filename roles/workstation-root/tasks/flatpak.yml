@@ -34,15 +34,15 @@
     name: org.octave.Octave
     state: present
 
-- name: Install Gnome Authenticator
-  flatpak:
-    name: com.github.bilelmoussaoui.Authenticator
-    state: present
+# - name: Install Gnome Authenticator
+#   flatpak:
+#     name: com.github.bilelmoussaoui.Authenticator
+#     state: present
 
-- name: Install NewsFlash
-  flatpak:
-    name: com.gitlab.newsflash
-    state: present
+# - name: Install NewsFlash
+#   flatpak:
+#     name: com.gitlab.newsflash
+#     state: present
     
 - name: Install DBeaver
   flatpak:
