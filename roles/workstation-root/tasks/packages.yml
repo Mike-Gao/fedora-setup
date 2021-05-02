@@ -24,12 +24,12 @@
     state: present
     disable_gpg_check: yes
 
-- name: Install nvidia support and other packages from @negativo17 - (Cannot be used with @rpmfusion)
+- name: Install negativo17 multimedia - cannot work with rpmfusion
   package:
     name: '{{ negativo17 }}'
     state: present
   vars:
-  negativo17:
+    negativo17:
       - nvidia-driver
       - nvidia-settings
       - akmod-nvidia
@@ -46,6 +46,7 @@
       - gstreamer1-plugins-ugly
       - rar
       - ffmpeg
+      - mpv
       - steam
       
 # - name: Install nvidia support and other packages from rpmfusion
@@ -53,7 +54,7 @@
 #    name: '{{ rpmfusion }}'
 #    state: present
 #  vars:
-#  rpmfusion:
+#    rpmfusion:
 #      - akmod-nvidia
 #      - xorg-x11-drv-nvidia-cuda
 #      - xorg-x11-drv-nvidia-cuda-libs
