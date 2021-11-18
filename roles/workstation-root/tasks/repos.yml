@@ -34,10 +34,10 @@
     gpgkey: https://linux-packages.resilio.com/resilio-sync/key.asc
     skip_if_unavailable: yes
     
-- name: Add dotnet repository
-  yum_repository:
-    name: dotnet
-    description: dotnet
-    baseurl: https://packages.microsoft.com/fedora/{{ ansible_distribution_major_version }}/prod/
-    gpgcheck: yes
-    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+# - name: Add dotnet repository
+#   yum_repository:
+#     name: dotnet
+#     description: dotnet
+#     baseurl: https://packages.microsoft.com/fedora/{{ ansible_distribution_major_version }}/prod/
+#     gpgcheck: yes
+#     gpgkey: https://packages.microsoft.com/keys/microsoft.asc

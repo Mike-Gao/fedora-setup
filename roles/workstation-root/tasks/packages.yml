@@ -16,13 +16,6 @@
       - 'https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm'
     state: present
     disable_gpg_check: yes
-
-- name: Add the Azul Java Repository
-  dnf:
-    name:
-      - 'https://cdn.azul.com/zulu/bin/zulu-repo-1.0.0-1.noarch.rpm'
-    state: present
-    disable_gpg_check: yes
       
 - name: Install nvidia support and other packages from rpmfusion
   package:
@@ -64,7 +57,7 @@
       - git-lfs
       - neovim
       - htop
-      - zulu8-jdk
+      - java-latest-openjdk-devel
       - java-11-openjdk-devel
       - nodejs
       - yarn
@@ -91,7 +84,6 @@
       - foliate
       - freecad
       - remmina
-      - LuxRender
       - meshlab
       - darktable
       - radare2
@@ -106,7 +98,6 @@
       - file-roller-nautilus
       - gvfs-nfs
       - starship
-      - gnome-power-manager
       # latex
       - texlive
       - latexmk
@@ -122,6 +113,7 @@
       - texlive-ifoddpage
       - texlive-acmart
       - texlive-makecell
+      - powertop
       # renderdoc package
       - renderdoc
       # rust/go related
@@ -143,3 +135,4 @@
       # - krita
       # - deadbeef
       # - godot
+      # - LuxRender

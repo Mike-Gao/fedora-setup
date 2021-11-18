@@ -63,3 +63,8 @@
   flatpak:
     name: org.telegram.desktop
     state: present
+    
+- name: Install Slack
+  flatpak:
+    name: com.slack.Slack
+    state: present
