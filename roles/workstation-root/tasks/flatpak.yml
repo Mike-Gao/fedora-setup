@@ -1,0 +1,65 @@
+- name: Add the flathub repository
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+
+- name: Install Signal from flathub
+  flatpak:
+    name: org.signal.Signal
+    state: present
+
+- name: Install SimpleNote from flathub
+  flatpak:
+    name: com.simplenote.Simplenote
+    state: present
+
+- name: Install Zoom from flathub
+  flatpak:
+    name: us.zoom.Zoom
+    state: present
+    
+- name: Install Standard Notes from flathub
+  flatpak:
+    name: org.standardnotes.standardnotes
+    state: present
+
+- name: Install Discord from flathub
+  flatpak:
+    name: com.discordapp.Discord
+    state: present
+
+- name: Install Wire from flathub
+  flatpak:
+    name: com.wire.WireDesktop
+    state: present
+
+- name: Install GNU Octave from flathub
+  flatpak:
+    name: org.octave.Octave
+    state: present
+
+- name: Install Gnome Podcasts
+  flatpak:
+    name: org.gnome.Podcasts
+    state: present
+
+- name: Install Fractal
+  flatpak:
+    name: org.gnome.fractal
+    state: present
+
+- name: Install DBeaver
+  flatpak:
+    name: io.dbeaver.DBeaverCommunity
+    state: present
+
+- name: Install BitWarden
+  flatpak:
+    name: com.bitwarden.desktop
+    state: present
+
+- name: Install Telegram Desktop
+  flatpak:
+    name: org.telegram.desktop
+    state: present

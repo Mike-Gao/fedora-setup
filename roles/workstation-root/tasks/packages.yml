@@ -1,0 +1,145 @@
+- name: Upgrade all packages
+  dnf:
+    name: '*'
+    state: latest
+
+- name: Enable the RPM Fusion repository
+  dnf:
+    name:
+      - 'https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm'
+    state: present
+    disable_gpg_check: yes
+    
+- name: Enable the RPM Fusion Non-free repository
+  dnf:
+    name:
+      - 'https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm'
+    state: present
+    disable_gpg_check: yes
+
+- name: Add the Azul Java Repository
+  dnf:
+    name:
+      - 'https://cdn.azul.com/zulu/bin/zulu-repo-1.0.0-1.noarch.rpm'
+    state: present
+    disable_gpg_check: yes
+      
+- name: Install nvidia support and other packages from rpmfusion
+  package:
+    name: '{{ rpmfusion }}'
+    state: present
+  vars:
+    rpmfusion:
+      - akmod-nvidia
+      - xorg-x11-drv-nvidia-cuda
+      - xorg-x11-drv-nvidia-cuda-libs
+      - blender
+      - ffmpeg
+      - gstreamer1-vaapi
+      - gstreamer1-plugins-ugly
+      - gstreamer1-plugins-bad-freeworld
+      - vulkan
+      
+- name: Install packages
+  package:
+    name: '{{ packages }}'
+    state: present
+  vars:
+    packages:
+      # gstreamer from @updates
+      - gstreamer1-plugins-base
+      - gstreamer1-plugins-good
+      - gstreamer1-plugins-good-extras
+      - gstreamer1-libav
+      - gstreamer1-plugins-ugly-free
+      - gstreamer1-plugins-bad-free
+      - gstreamer1-plugins-bad-free-extras
+      - gstreamer1-plugins-bad-free-fluidsynth
+      # gstreamer
+      - celluloid
+      - util-linux-user
+      - aria2
+      - git
+      - git-filter-repo
+      - git-lfs
+      - neovim
+      - htop
+      - zulu8-jdk
+      - java-11-openjdk-devel
+      - nodejs
+      - yarn
+      - code
+      - google-chrome-stable
+      - python3.9 # required for taichi
+      - python3-psutil # ansible dconf module
+      - python-pip
+      - evolution
+      - evolution-ews
+      - seahorse
+      - seahorse-nautilus
+      - gimp
+      - inkscape
+      - gcc
+      - gcc-c++
+      - llvm
+      - clang
+      - lldb
+      - make
+      - cmake
+      - dino
+      - resilio-sync
+      - foliate
+      - freecad
+      - remmina
+      - LuxRender
+      - meshlab
+      - darktable
+      - radare2
+      - cutter-re
+      - p7zip
+      - p7zip-plugins
+      - valgrind
+      - perf
+      - transmission
+      - fish
+      - file-roller
+      - file-roller-nautilus
+      - gvfs-nfs
+      - starship
+      - gnome-power-manager
+      # latex
+      - texlive
+      - latexmk
+      - texlive-chktex
+      - texlive-latexindent
+      - texlive-wrapfig
+      - texlive-sourcesanspro
+      - texlive-fontawesome
+      - texlive-tcolorbox
+      - texlive-clrscode3e
+      - texlive-tikz-qtree
+      - texlive-upquote
+      - texlive-ifoddpage
+      - texlive-acmart
+      - texlive-makecell
+      # renderdoc package
+      - renderdoc
+      # rust/go related
+      # - rust
+      # - cargo
+      # - rls
+      # - rustfmt
+      # - golang
+      # dotnet related
+      - dotnet-sdk-5.0
+      # the following depends on jackctl
+      # - ardour6
+      # - supercollider
+      # yubikey related
+      # - yubikey-manager
+      # additional multimedia apps
+      # - wings
+      # - rawtherapee
+      # - krita
+      # - deadbeef
+      # - godot
