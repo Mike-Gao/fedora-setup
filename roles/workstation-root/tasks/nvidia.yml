@@ -1,0 +1,32 @@
+- name: Install nvidia support and other packages from rpmfusion
+  package:
+    name: '{{ nvidia }}'
+    state: present
+  vars:
+    nvidia:
+      - akmod-nvidia
+      - xorg-x11-drv-nvidia-cuda
+      - xorg-x11-drv-nvidia-cuda-libs
+      - vulkan
+      
+- name: Copy nvidia udev rules
+  copy:
+    src: '{{ ansible_env.PWD }}/roles/workstation-root/tasks/80-nvidia-pm.rules'
+    dest: /etc/udev/rules.d/80-nvidia-pm.rules
+    owner: root
+    group: root
+    mode: 0644
+     
+- name: Copy nvidia configurations into modprobe.d
+  copy:
+    src: '{{ ansible_env.PWD }}/roles/workstation-root/tasks/nvidia.conf'
+    dest: /etc/modprobe.d/nvidia.conf
+    owner: root
+    group: root
+    mode: 0644
+     
+- name: Enable nvidia-persistenced
+  systemd:
+    name: nvidia-persistenced.service
+    enabled: yes
+ 

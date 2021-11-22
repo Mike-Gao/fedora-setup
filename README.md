@@ -5,9 +5,11 @@ Mike's Fedora Setup Scripts
 
 To run this setup, clone the repository or download a zip version, and run ``./bootstrap``. Remember to enter your root password when prompted `BECOME password`.
 
-If you are running a system with no NVIDIA graphics card, go to ``roles/workstation-root/tasks/packages.yml`` and comment out all the NVIDIA related packages.
+If you are running a system with no NVIDIA graphics card, go to ``roles/workstation-root/tasks/main.yml`` and comment out ``nvidia.yml``.
 
-After running the ansible script, run
+After running the ansible script, modify ``/etc/default/grub`` to add ``mitigations=off`` and then ``sudo grub2-mkconfig -o /boot/grub2/grub.cfg``
+
+To install the vscode extensions I use, run:
 
 ```
 code --install-extension bierner.markdown-preview-github-styles

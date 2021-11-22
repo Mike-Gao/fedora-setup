@@ -2,3 +2,8 @@
   community.general.timezone:
     hwclock: UTC
   ignore_errors: yes
+
+- name: Enable powertop
+  systemd:
+    name: powertop.service
+    enabled: yes

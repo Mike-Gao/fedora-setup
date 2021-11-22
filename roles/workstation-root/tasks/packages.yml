@@ -17,33 +17,22 @@
     state: present
     disable_gpg_check: yes
       
-- name: Install nvidia support and other packages from rpmfusion
-  package:
-    name: '{{ rpmfusion }}'
-    state: present
-  vars:
-    rpmfusion:
-      - akmod-nvidia
-      - xorg-x11-drv-nvidia-cuda
-      - xorg-x11-drv-nvidia-cuda-libs
-      - blender
-      - ffmpeg
-      - gstreamer1-vaapi
-      - gstreamer1-plugins-ugly
-      - gstreamer1-plugins-bad-freeworld
-      - vulkan
-      
 - name: Install packages
   package:
     name: '{{ packages }}'
     state: present
   vars:
     packages:
+      - blender
+      - ffmpeg
       # gstreamer from @updates
       - gstreamer1-plugins-base
       - gstreamer1-plugins-good
       - gstreamer1-plugins-good-extras
       - gstreamer1-libav
+      - gstreamer1-vaapi
+      - gstreamer1-plugins-ugly
+      - gstreamer1-plugins-bad-freeworld
       - gstreamer1-plugins-ugly-free
       - gstreamer1-plugins-bad-free
       - gstreamer1-plugins-bad-free-extras
