@@ -9,6 +9,12 @@ If you are running a system with no NVIDIA graphics card, go to ``roles/workstat
 
 After running the ansible script, modify ``/etc/default/grub`` to add ``mitigations=off`` and then ``sudo grub2-mkconfig -o /boot/grub2/grub.cfg``
 
+Run ``chsh -s /usr/bin/fish`` to change the default shell to fish, then add ``starship init fish | source`` to the end of ``~/.config/fish/config.fish``
+
+Install rustup ``curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh``
+
+Set fish user paths by running ``set -U fish_user_paths $HOME/.cargo/bin $HOME/.local/bin $fish_user_paths``
+
 To install the vscode extensions I use, run:
 
 ```

@@ -2,5 +2,6 @@
     - import_tasks: repos.yml
     - import_tasks: packages.yml
     - import_tasks: flatpak.yml
+    - import_tasks: golang.yml
     - import_tasks: nvidia.yml
   become: yes

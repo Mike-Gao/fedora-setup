@@ -1,3 +1,15 @@
+- name: Remove unnecessary softwares
+  dnf:
+    name: '{{ packages }}'
+    state: absent
+    autoremove: yes
+  vars:
+    packages:
+      - PackageKit
+      - gnome-software
+      - cheese
+      - mediawriter
+
 - name: Upgrade all packages
   dnf:
     name: '*'
